@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>p5.js Sketch</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+</head>
+<body>
+  <div id="controls">
+    <div>
+      <label for="seed">Seed:</label>
+      <input type="text" id="seed" value="Empty seed is random every run." size="30">
+    </div>
+    <div>
+      <label for="size">Size (<span id="size-value">90</span>):</label>
+      <input type="range" id="size" min="10" max="100" value="90" step="1">
+    </div>
+    <div>
+      <label for="population">Population (<span id="population-value">1.00</span>):</label>
+      <input type="range" id="population" min="0" max="4" value="1" step="0.01">
+    </div>
+    <div>
+      <label for="pencils">Pencils (<span id="pencils-value">1</span>):</label>
+      <input type="range" id="pencils" min="1" max="10" value="1" step="1">
+    </div>
+    <div>
+      <label for="drawPencil">Draw Pencil (<span id="drawPencil-value">1</span>):</label>
+      <input type="range" id="drawPencil" min="1" max="10" value="1" step="1">
+    </div>
+    <div>
+      <label for="repulsion">Repulsion (<span id="repulsion-value">1.00</span>):</label>
+      <input type="range" id="repulsion" min="1" max="2" value="1" step="0.01">
+    </div>
+    <div>
+      <label for="dropoffRate">Dropoff Rate (<span id="dropoffRate-value">0.00</span>):</label>
+      <input type="range" id="dropoffRate" min="0" max="1" value="0" step="0.01">
+    </div>
+    <div>
+      <label for="dropoffDirection">Dropoff Direction:</label>
+      <select id="dropoffDirection">
+        <option value="none">None</option>
+        <option value="x-positive">X-axis (Left to Right)</option>
+        <option value="x-negative">X-axis (Right to Left)</option>
+        <option value="y-positive">Y-axis (Top to Bottom)</option>
+        <option value="y-negative">Y-axis (Bottom to Top)</option>
+        <option value="radial">Radial (Center Outward)</option>
+      </select>
+    </div>
+    <div>
+      <label for="maxTurn">Max Turn Angle (<span id="maxTurn-value">180</span>&deg;):</label>
+      <input type="range" id="maxTurn" min="5" max="270" value="180" step="1">
+    </div>
+    <div>
+      <label for="colorMode">Color Mode:</label>
+      <select id="colorMode">
+        <option value="single">Single Color</option>
+        <option value="direction" selected>By Direction</option>
+        <option value="position">By Position</option>
+      </select>
+    </div>
+    <div>
+      <label for="color1">Color 1:</label>
+      <input type="color" id="color1" value="#B8E0FF">
+    </div>
+    <div>
+      <label for="color2">Color 2:</label>
+      <input type="color" id="color2" value="#6EAED5">
+    </div>
+    <div>
+      <label for="color3">Color 3:</label>
+      <input type="color" id="color3" value="#FFCBA4">
+    </div>
+    <div>
+      <label for="bgColor">Background Color (display only):</label>
+      <input type="color" id="bgColor" value="#FFFFFF">
+    </div>
+    <div>
+      <label for="lineStyle">Line Style:</label>
+      <select id="lineStyle">
+        <option value="solid">Solid</option>
+        <option value="dashed">Dashed</option>
+        <option value="dotted">Dotted</option>
+      </select>
+    </div>
+    <div>
+      <label for="hatchingType">Hatching:</label>
+      <select id="hatchingType">
+        <option value="none">None</option>
+        <option value="parallel">Parallel</option>
+        <option value="cross">Cross-hatch</option>
+        <option value="radial">Radial</option>
+      </select>
+    </div>
+    <div>
+      <label for="hatchingDensity">Hatching Density (<span id="hatchingDensity-value">5</span>):</label>
+      <input type="range" id="hatchingDensity" min="2" max="20" value="5" step="1">
+    </div>
+    <div>
+      <label for="paperFormat">Paper Format:</label>
+      <select id="paperFormat">
+        <option value="square">Square (8.5" x 8.5")</option>
+        <option value="letter-h">US Letter Horizontal (11" x 8.5")</option>
+        <option value="letter-v">US Letter Vertical (8.5" x 11")</option>
+      </select>
+    </div>
+    <div>
+      <label for="exportSVG">Export:</label>
+      <button id="exportSVG">Save as SVG</button>
+    </div>
+    <button id="redrawButton">Redraw</button>
+  </div>
+  <main id="canvas-container">
+    <!-- p5.js canvas will be created here -->
+  </main>
+  <script src="js/sketch.js"></script>
+</body>
+</html>
